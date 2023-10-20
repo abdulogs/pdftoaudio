@@ -1,0 +1,84 @@
+.container {
+  padding: 20px 30%;
+}
+.container .heading {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+.container .heading .icon {
+  margin-right: 10px;
+  font-size: 40px;
+}
+.container .cards-stack {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.container .cards-stack .card {
+  width: 100%;
+  margin-bottom: 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.container .cards-stack .card .card-header {
+  padding: 15px;
+}
+.container .cards-stack .card .card-header .card-title {
+  margin: 0px;
+  display: flex;
+  align-items: center;
+}
+.container .cards-stack .card .card-header .card-title .icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.container .cards-stack .card .card-body {
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.container .cards-stack .card .card-body .audio-container {
+  width: 100%;
+}
+.container .cards-stack .card .card-body .audio-container audio {
+  width: 100%;
+}
+.container .cards-stack .card .card-body .audio-container audio::-webkit-media-controls-play-button {
+  background-color: #FF4F5A;
+  border-radius: 50px;
+  color: #000;
+}
+.container .cards-stack .card .card-body .audio-container audio::-webkit-media-controls-panel {
+  background-color: #fff;
+  color: #000;
+  width: 100%;
+  align-self: stretch;
+}
+.container .cards-stack .card .card-body .btn {
+  padding: 0px 10px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
+}
+
+.create-btn {
+  background-color: #FF4F5A;
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 30px;
+  border-radius: 50px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.create-btn:hover {
+  background-color: #f83a46;
+}/*# sourceMappingURL=stylesheet.css.map */

@@ -1,0 +1,29 @@
+.banner {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+}
+.banner .col {
+  width: 50%;
+}
+.banner .col .heading {
+  font-size: 40px;
+}
+.banner .col .description {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+}
+.banner .col .btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.banner .col .image {
+  width: 100%;
+}/*# sourceMappingURL=stylesheet.css.map */

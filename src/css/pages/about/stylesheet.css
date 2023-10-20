@@ -1,0 +1,11 @@
+.about-page {
+  padding: 80px 20% 20px 20%;
+  height: 100%;
+  text-align: center;
+}
+.about-page .heading {
+  font-size: 40px;
+}
+.about-page .description {
+  font-size: 20px;
+}/*# sourceMappingURL=stylesheet.css.map */

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/pages/index/stylesheet.css')}}">
+{% endblock %}
+
+
+{% block content %}
+<main class="content">
+    <div class="banner">
+        <div class="col">
+            <h1 class="heading">Welcome to Easy<b class="text-secondary">PDF</b></h1>
+            <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, ratione vero! Nostrum consequuntur
+                omnis explicabo suscipit odit tempora obcaecati veniam ut.
+                Architecto eligendi ipsa ullam reprehenderit hic eveniet explicabo ducimus.
+            </p>
+            <br>
+            <a href="/register" class="btn bg-secondary bg-secondary-hover text-white">
+                Get started <span class="bx bx-right-arrow"></span>
+            </a>
+        </div>
+        <div class="col text-right">
+            <img src="{{ url_for('static', filename='/imgs/main.jpg')}}" class="image" alt="">
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

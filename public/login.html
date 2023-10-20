@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %} Login to your account {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/pages/account/stylesheet.css')}}">
+{% endblock %}
+
+
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=True) %}
+{% if messages %}
+{% for message in messages %}
+<div style="margin-top: 80px;padding: 0 40px;">
+    <div class="alert alert-{{ message[0] }}" style="color: white;">
+        {{ message[1] }}
+    </div>
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+<main class="account-page">
+    <div class="account-form">
+        <form action="/login/" id="login" method="POST">
+            <h1 class="heading">Easy<b class="text-secondary">PDF</b></h1>
+            <h3 class="sub-heading">Log in to your account</h3>
+            <div id="response">
+
+            </div>
+            <div class="form-group">
+                <input type="text" name="username" id="username" placeholder="Enter your username" class="form-field">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" id="password" placeholder="Enter your password"
+                    class="form-field">
+            </div>
+            <p class="text-right">
+                <a href="/forgot-password" class="text-secondary text-decoration-none font-weight-bold">
+                    Forgot password?
+                </a>
+            </p>
+            <button type="submit" class="btn bg-secondary bg-secondary-hover text-white" id="btn">Login</button>
+            <p class="text-primary text-center">
+                I don't have an account!
+                <a href="/register" class="text-secondary text-decoration-none font-weight-bold">
+                    create account?
+                </a>
+            </p>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/login.js')}}"></script>
+{% endblock %}

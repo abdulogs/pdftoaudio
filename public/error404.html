@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %} 404 {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/pages/home/stylesheet.css')}}">
+<style>
+    .btn {
+        padding: 8px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .sad-icon {
+        font-size: 150px;
+        margin: 0px;
+        color: red;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<main class="content" style="height: auto;">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message[0] }}" style="color: white;">
+        {{ message[1] }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="container">
+        <h1 class="heading">
+            <span class="icon bx bx-x-circle text-secondary"></span> <b> Page not found</b>
+        </h1>
+        <div class="cards-stack">
+            <h2 class="bx bx-sad sad-icon"></h2>
+            <h3>The content you are requesting might not be available right now. For now you can go back to home</h3>
+            <a href="/" class="btn bg-secondary bg-secondary-hover text-white">Home</a>
+        </div>
+    </div>
+</main>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

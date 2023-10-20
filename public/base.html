@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easypdf | {% block title %}   {% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/stylesheet.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/libs/boxicons/css/boxicons.min.css')}}">
+    {% block styles %}
+    
+    {% endblock %}
+    <style>
+        .alert-danger{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body class="layout">
+    <header class="navbar">
+        <a href="/" class="logo">
+            <span class="line bg-black"></span>
+            <span class="line bg-secondary"></span>
+        </a>
+        <nav class="right-menu">
+            <ul class="list-group">
+                {% if "user" not in session %}
+
+                <li class="list-item">
+                    <a href="/login" class="list-btn bg-secondary bg-secondary-hover text-white">Login</a>
+                </li>
+                <li class="list-item">
+                    <a href="/register" class="list-btn bg-black text-white">Signup</a>
+                </li>
+                {% endif %}
+                {% if "user"in session %}
+                <li class="list-item dropdown">
+                    <a href="javascript:void(0)" class="avatar-btn bg-black text-white" data-toggle="dropdown">
+                        <span class="text">{{user.firstname[0]}}{{user.lastname[0]}}</span>
+                    </a>
+                    <div class="dropdown-menu bg-white border">
+                        <a href="/profile" class="dropdown-item">
+                            <span class="icon bx bx-user"></span> Profile
+                        </a>
+                        <a href="/logout" class="dropdown-item">
+                            <span class="icon bx bx-log-out-circle"></span> Logout
+                        </a>
+                    </div>
+                </li>
+                {% endif %}
+                <li class="list-item dropdown">
+                    <a href="javascript:void(0)" class="menu-btn" data-toggle="dropdown">
+                        <span class="bx bx-menu"></span>
+                    </a>
+                    <div class="dropdown-menu bg-white border">
+                        <a href="/about" class="dropdown-item">
+                            <span class="icon bx bx-info-circle"></span> About us
+                        </a>
+                        <a href="/contact" class="dropdown-item">
+                            <span class="icon bx bx-envelope"></span> Contact us
+                        </a>
+                        <a href="/privacy-policy" class="dropdown-item">
+                            <span class="icon bx bx-low-vision"></span> Privacy policy
+                        </a>
+                        <a href="/terms-and-conditions" class="dropdown-item">
+                            <span class="icon bx bx-list-check"></span> Terms and conditions
+                        </a>
+                        <a href="/help-center" class="dropdown-item">
+                            <span class="icon bx bx-question-mark"></span> Help center
+                        </a>
+                      
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {% block content %} {% endblock %}
+    <footer class="footer text-center">
+        <h2>Easy<b class="text-secondary">PDF</b><small>.com</small></h2>
+        <ul class="list-group">
+            <li class="list-item">
+                <a href="/terms-and-conditions" class="list-link">Terms and condition</a>
+            </li>
+            <li class="list-item">
+                <a href="/privacy-policy" class="list-link">Privacy policy</a>
+            </li>
+            <li class="list-item">
+                <a href="/about" class="list-link">About us</a>
+            </li>
+            <li class="list-item">
+                <a href="/contact" class="list-link">Contact us</a>
+            </li>
+        </ul>
+        <p> <b>&copy; <span id="year"></span> easypdf all right reserved</b> </p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='libs/jquery/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/message.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/dropdown.js')}}"></script>
+    {% block scripts %}{% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+.footer {
+  padding: 5px 40px;
+  border-top: 1px solid #ccc;
+  background-color: #f5f5f5;
+
+  .list-group {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    list-style-type: none;
+    padding: 5px;
+    margin: 0px;
+
+    .list-item {
+      padding: 2px 10px;
+
+      .list-link {
+        color: #000;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 1030px) {}
+
+@media screen and (max-width: 800px) {}
+
+@media screen and (max-width: 600px) {}
+
+@media screen and (max-width: 500px) {
+    .footer {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 300px) {}

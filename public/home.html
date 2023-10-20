@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/pages/home/stylesheet.css')}}">
+<style>
+    .btn {
+        padding: 8px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .sad-icon {
+        font-size: 150px;
+        margin: 0px;
+        color: red;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+
+<main class="content" style="height: auto;">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message[0] }}" style="color: white;">
+        {{ message[1] }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="container">
+        <h1 class="heading">
+            <span class="icon bx bx-play-circle text-secondary"></span> <b>My Audios</b>
+        </h1>
+        <div class="cards-stack">
+            {% if audios %}
+            {% for audio in audios %}
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title"><span class="icon bx bx-file text-secondary"></span> {{audio.name}}</h3>
+                </div>
+                <div class="card-body">
+                    <div class="audio-container">
+                        <audio controls controlsList="nodownload noplaybackrate">
+                            <source src="{{ url_for('static', filename='audios/')}}{{audio.file}}" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    <a href="{{ url_for('static', filename='audios/')}}{{audio.file}}" class="btn bx bx-download"
+                        download></a>
+                    <a href="conversion/update/{{ audio.id }}" class="btn bx bx-edit"></a>
+                    <a href="/conversion/delete/{{ audio.id }}" class="btn bx bx-trash"></a>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <h2 class="bx bx-sad sad-icon"></h2>
+            <h3>You have no audios created yet</h3>
+            <a href="/conversion/create" class="btn bg-secondary bg-secondary-hover text-white" id="btn">Convert pdf</a>
+            {% endif %}
+        </div>
+    </div>
+</main>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a href="/conversion/create" class="bx bx-plus create-btn"></a>
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Pdf to audio convert {% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/css/pages/account/stylesheet.css')}}">
+{% endblock %}
+
+
+{% block content %}
+<main class="account-page">
+    <div class="account-form">
+        <form  method="POST" enctype="multipart/form-data">
+            <h1 class="heading">Easy<b class="text-secondary">PDF</b></h1>
+            <h3 class="sub-heading">Convert your pdf into mp3 audio</h3>
+            <div class="form-group">
+                <input type="title" name="name" placeholder="Title" value="{{ audio.name }}" class="form-field" required>
+            </div>
+            <div class="form-group">
+                <label for="file" class="btn-upload">
+                    <span class="bx bx-upload"></span>
+                    Upload file
+                    <input type="file" name="file" id="file" class="file" required>
+                </label>
+            </div>
+            <button type="submit" class="btn bg-secondary bg-secondary-hover text-white">Convert</button>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock %}

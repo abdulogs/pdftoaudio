@@ -1,0 +1,32 @@
+.banner {
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+
+    .col {
+        width:50%;
+        .heading {
+            font-size: 40px;
+        }
+
+        .description {
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 25px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        .image{
+            width: 100%;
+        }
+    }
+}

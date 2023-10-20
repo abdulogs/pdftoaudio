@@ -1,0 +1,108 @@
+.account-page {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 80px;
+    height: inherit;
+
+    .account-form {
+        width: 23%;
+
+        .heading {
+            text-align: center;
+            margin: 10px 0;
+            font-weight: normal;
+            font-size: 30px;
+        }
+
+        .sub-heading {
+            text-align: center;
+            margin: 0;
+            margin-bottom: 30px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        
+        .profile-image {
+            padding: 30px 20px;
+            border-radius: 50px;
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            border: 2px solid salmon;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+
+            .form-field {
+                padding: 15px;
+                outline: none;
+                border: none;
+                display: block;
+                width: 100%;
+                border-radius: 5px;
+                font-size: 14px;
+                background-color: #f5f5f5;
+
+                &::placeholder {
+                    font-weight: bolder;
+                }
+            }
+            .btn-upload {
+                padding: 15px;
+                outline: none;
+                border: none;
+                display: block;
+                width: 100%;
+                border-radius: 5px;
+                font-size: 14px;
+                background-color: #f5f5f5;
+                cursor: pointer;
+                font-weight: bolder;
+                color:#666;
+                text-align: center;
+                .file {
+                  display: none;
+                }
+              }
+        }
+
+        .btn {
+            width: 100%;
+            outline: none;
+            border: none;
+            display: block;
+            padding: 15px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    }
+}
+
+@media screen and (max-width: 1030px) {}
+
+@media screen and (max-width: 800px) {}
+
+@media screen and (max-width: 600px) {}
+
+@media screen and (max-width: 500px) {
+    .account-page {
+        padding: 10px;
+        margin-bottom: 10px;
+
+        .account-form {
+            width: 95%;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 300px) {}

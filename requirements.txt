@@ -1,0 +1,10 @@
+pip install Flask==2.0.2
+pip install Flask-Cors==3.0.10
+pip install Flask-Mail==0.9.1
+pip install Flask-SQLAlchemy==2.5.1
+pip install mysqlclient==2.1.0
+pip install Pillow==9.0.0
+pip install PyPDF2==1.26.0
+pip install pyttsx3==2.90
+pip install SQLAlchemy==1.4.31
+
